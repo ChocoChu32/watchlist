@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="zh">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <title>{{ user.name }} 的观影清单</title>
-    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
-</head>
-
-<body>
-    <h2>
-        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
-        {{ user.name }} 的观影清单
-    </h2>
-    <p>{{ movies|length }} 部影片</p>
-    <ul class="movie-list">
-        {% for movie in movies %}
-        <li>{{ movie.title }} - {{ movie.year }}</li>
-        {% endfor %}
-    </ul>
-    <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
-    <footer>
-        <small>&copy; 2025 <a href="https://github.com/ChocoChu32">ChocoChu32</a></small>
-    </footer>
-</body>
-
-</html>
+{% block content %}
+<p>{{ movies|length }} 部电影</p>
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li>{{ movie.title }} - {{ movie.year }}
+        <span class="float-right">
+            <a class="douban" href="https://www.douban.com/search?cat=1002&q={{ movie.title }}" target="_blank"
+                title="在豆瓣查找这部电影">豆瓣</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+<img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}" title="to~to~ro~">
+{% endblock %}
