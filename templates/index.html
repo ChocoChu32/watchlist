@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ name }} 的观影清单</title>
+</head>
+
+<body>
+    <h2>{{ name }} 的观影清单</h2>
+    <p>{{ movies|length }} 部影片</p>
+    <ul>
+        {% for movie in movies %}
+        <li>{{ movie.title }} - {{ movie.year }}</li>
+        {% endfor %}
+    </ul>
+    <footer>
+        <small>&copy; 2025 <a href="https://github.com/ChocoChu32">ChocoChu32</a></small>
+    </footer>
+</body>
+
+</html>
