@@ -15,7 +15,7 @@ def login():
         password = request.form.get("password")
 
         if not username or not password:
-            flash("无效输入。")
+            flash("输入无效。")
             return redirect(url_for("auth.login"))  # 重定向回登录页面
 
         user = db.session.execute(select(User).filter_by(username=username)).scalar()

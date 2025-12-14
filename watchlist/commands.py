@@ -58,7 +58,7 @@ def register_commands(app):
         """Create user."""
         db.create_all()
 
-        user = db.session.execute(select(User)).first()
+        user = db.session.execute(select(User)).scalar()
         if user is not None:
             click.echo("Updating user...")
             user.username = username

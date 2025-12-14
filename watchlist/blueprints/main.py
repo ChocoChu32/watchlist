@@ -70,7 +70,7 @@ def settings():
         name = request.form.get("name")
 
         if not name or len(name) > 20:
-            flash("输入无效")
+            flash("输入无效。")
             return redirect(url_for("main.settings"))
 
         current_user.name = name  # 更新当前用户的姓名
