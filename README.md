@@ -71,8 +71,27 @@ python -m pytest --cov=watchlist
 Example output:
 
 ```bash
-tests/test_watchlist.py ...............         [100%]
-______________________________________________________
+============================= test session starts ==============================
+collected 15 items                                                             
+
+tests/test_watchlist.py::test_app_exist PASSED                           [  6%]
+tests/test_watchlist.py::test_app_is_testing PASSED                      [ 13%]
+tests/test_watchlist.py::test_404_page PASSED                            [ 20%]
+tests/test_watchlist.py::test_index_page PASSED                          [ 26%]
+tests/test_watchlist.py::test_create_item PASSED                         [ 33%]
+tests/test_watchlist.py::test_update_item PASSED                         [ 40%]
+tests/test_watchlist.py::test_delete_item PASSED                         [ 46%]
+tests/test_watchlist.py::test_login_protect PASSED                       [ 53%]
+tests/test_watchlist.py::test_login PASSED                               [ 60%]
+tests/test_watchlist.py::test_logout PASSED                              [ 66%]
+tests/test_watchlist.py::test_settings PASSED                            [ 73%]
+tests/test_watchlist.py::test_initdb_command PASSED                      [ 80%]
+tests/test_watchlist.py::test_forge_command PASSED                       [ 86%]
+tests/test_watchlist.py::test_admin_command PASSED                       [ 93%]
+tests/test_watchlist.py::test_admin_command_update PASSED                [100%]
+
+================================ tests coverage ================================
+
 Name                               Stmts   Miss  Cover
 ------------------------------------------------------
 watchlist/__init__.py                 23      0   100%
@@ -86,4 +105,5 @@ watchlist/models.py                   20      0   100%
 watchlist/settings.py                 15      0   100%
 ------------------------------------------------------
 TOTAL                                212      7    97%
+============================== 15 passed in 1.93s ==============================
 ```
